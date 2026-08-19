@@ -84,10 +84,10 @@
 
   .nav-right{display:flex;align-items:center;gap:14px}
 
-  .lang-toggle{display:inline-flex;border:1px solid var(--line-light);border-radius:100px;overflow:hidden;transition:border-color .4s var(--ease)}
-  header.scrolled .lang-toggle{border-color:var(--line)}
-  .lang-toggle button{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;padding:6px 11px;cursor:pointer;background:transparent;border:none;color:rgba(247,241,230,.65);transition:background .2s var(--ease),color .2s var(--ease)}
-  header.scrolled .lang-toggle button{color:var(--muted)}
+  .lang-toggle{display:inline-flex;border:1px solid rgba(247,241,230,.35);border-radius:100px;overflow:hidden;background:rgba(28,18,10,.34);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);transition:border-color .4s var(--ease),background .4s var(--ease)}
+  header.scrolled .lang-toggle{border-color:var(--line);background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
+  .lang-toggle button{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;padding:6px 11px;cursor:pointer;background:transparent;border:none;color:rgba(247,241,230,.95);transition:background .2s var(--ease),color .2s var(--ease)}
+  header.scrolled .lang-toggle button{color:var(--text)}
   .lang-toggle button:hover{color:var(--brass)}
   header.scrolled .lang-toggle button:hover{color:var(--text)}
   .lang-toggle button.active{background:var(--accent);color:#fff}
@@ -380,7 +380,7 @@
   .wave-accent.in{opacity:.5}
   .wave-accent .mini-emblem{width:100%;height:auto;display:block;overflow:visible}
   .mini-emblem circle,.mini-emblem path{vector-effect:non-scaling-stroke}
-  @media(max-width:640px){ .wave-accent{width:96px!important} }
+  @media(max-width:640px){ .wave-accent{width:74px!important;top:20px!important;right:14px!important;left:auto!important;bottom:auto!important} .wave-accent.in{opacity:.4} }
 
   /* Hero molécule (clair + tech) */
   .hero{min-height:90vh;display:flex;align-items:center;padding:130px 0 90px;position:relative;overflow:hidden}
@@ -405,7 +405,7 @@
   .wave-accent.in{opacity:.5}
   .wave-accent .mini-emblem{width:100%;height:auto;display:block;overflow:visible}
   .mini-emblem circle,.mini-emblem path{vector-effect:non-scaling-stroke}
-  @media(max-width:640px){ .wave-accent{width:96px!important} }
+  @media(max-width:640px){ .wave-accent{width:74px!important;top:20px!important;right:14px!important;left:auto!important;bottom:auto!important} .wave-accent.in{opacity:.4} }
   .hero .eyebrow{color:#edd9a6;text-shadow:0 1px 10px rgba(20,13,7,.6)}
   .hero .eyebrow::before{background:#edd9a6;opacity:.9}
 </style>
