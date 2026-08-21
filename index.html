@@ -36,12 +36,12 @@
   .meta b{color:var(--ink)}
 
   .viewport{position:fixed;inset:0;z-index:10;overflow:hidden}
-  .track{display:flex;align-items:center;height:100vh;width:max-content;will-change:transform;padding:0}
-  .panel{flex:0 0 auto;width:100vw;height:100vh;display:flex;flex-direction:column;justify-content:safe center;padding:0 clamp(28px,9vw,150px);position:relative;z-index:2;overflow-y:auto;overflow-x:hidden;scrollbar-width:none}
+  .track{display:flex;align-items:center;height:100vh;height:100dvh;width:max-content;will-change:transform;padding:0}
+  .panel{flex:0 0 auto;width:100vw;height:100vh;height:100dvh;display:flex;flex-direction:column;justify-content:safe center;padding:0 clamp(28px,9vw,150px);position:relative;z-index:2;overflow-y:auto;overflow-x:hidden;scrollbar-width:none}
   .panel::-webkit-scrollbar{display:none}
   .panel .inner{position:relative;z-index:3;max-width:1180px;width:100%}
   .panel.split .inner{max-width:46vw}
-  .gap{flex:0 0 auto;width:46vw;max-width:640px;height:100vh}
+  .gap{flex:0 0 auto;width:46vw;max-width:640px;height:100vh;height:100dvh}
   .gap.sm{width:40vw}
   .stage{position:absolute;top:0;right:0;width:52vw;height:100%;z-index:1;pointer-events:none}
 
@@ -164,7 +164,7 @@
 
   @media (max-width:1024px){
     .menu{display:none}
-    .panel{width:100vw;padding:84px 22px 92px;height:100vh;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;justify-content:flex-start;scrollbar-width:none}
+    .panel{width:100vw;padding:84px 22px 92px;height:100vh;height:100dvh;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;justify-content:flex-start;scrollbar-width:none}
     .panel::-webkit-scrollbar{display:none}
     .panel.split .inner{max-width:100%}
     .panel.split{flex-direction:column;justify-content:flex-start;gap:14px}
@@ -191,7 +191,7 @@
   .panel[data-i="6"] .opcard .ph{aspect-ratio:16/10}
   .panel[data-i="6"] .opnote{margin-top:10px}
   /* Estimation: keep below top bar, compact for short screens */
-  .panel[data-i="4"]{justify-content:flex-start;padding-top:84px;padding-bottom:54px}
+  .panel[data-i="4"]{justify-content:flex-start;padding-top:84px;padding-bottom:120px}
   .panel[data-i="4"] .eyebrow{margin-bottom:12px}
   .panel[data-i="4"] h2{font-size:clamp(1.7rem,3.1vw,2.6rem);margin-bottom:12px}
   .panel[data-i="4"] .lead{margin-bottom:14px}
