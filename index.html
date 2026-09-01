@@ -5,6 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chloé Lechat · AI Systems Designer</title>
 <meta name="description" content="Chloé Lechat · AI Systems Designer. Workflows et automatisations assistés par IA pour indépendants et petites entreprises.">
+<link rel="canonical" href="https://chloelechat.com/">
+<meta name="theme-color" content="#f4f2ec">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%23f4f2ec'/%3E%3Ctext%20x='31'%20y='45'%20text-anchor='middle'%20font-family='Georgia,serif'%20font-size='42'%20font-weight='600'%20fill='%23141410'%3EC%3C/text%3E%3Ccircle%20cx='46'%20cy='44'%20r='5'%20fill='%232743f0'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%23f4f2ec'/%3E%3Ctext%20x='31'%20y='45'%20text-anchor='middle'%20font-family='Georgia,serif'%20font-size='42'%20font-weight='600'%20fill='%23141410'%3EC%3C/text%3E%3Ccircle%20cx='46'%20cy='44'%20r='5'%20fill='%232743f0'/%3E%3C/svg%3E">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Chloé Lechat">
+<meta property="og:title" content="Chloé Lechat · AI Systems Designer">
+<meta property="og:description" content="Chloé Lechat — AI Systems Designer. Custom AI workflows & automation for freelancers and small businesses, from idea to reliable delivery. Berlin · FR/EN/DE.">
+<meta property="og:url" content="https://chloelechat.com/">
+<meta property="og:image" content="https://chloelechat.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Chloé Lechat — AI Systems Designer">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="de_DE">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Chloé Lechat · AI Systems Designer">
+<meta name="twitter:description" content="Chloé Lechat — AI Systems Designer. Custom AI workflows & automation for freelancers and small businesses, from idea to reliable delivery. Berlin · FR/EN/DE.">
+<meta name="twitter:image" content="https://chloelechat.com/og.png">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -207,6 +229,15 @@
   .panel[data-i="4"],.panel[data-i="6"]{justify-content:safe center}
   @media (max-width:1024px){ .panel[data-i="4"],.panel[data-i="6"]{justify-content:flex-start} }
 </style>
+<style>
+  .legal-card{padding:40px 42px 44px}
+  .legal-body{font-family:var(--sans);color:var(--ink-soft);font-size:14px;line-height:1.6;max-width:70ch}
+  .legal-body h3{font-family:var(--serif);color:var(--ink);font-size:20px;font-weight:600;margin:22px 0 8px}
+  .legal-body h3:first-child{margin-top:4px}
+  .legal-body p{margin:0 0 9px}
+  .legal-body strong{color:var(--ink);font-weight:600}
+  .legal-body .upd{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--muted);margin-top:16px}
+</style>
 </head>
 <body>
 <canvas id="scene"></canvas>
@@ -340,6 +371,7 @@
         <div class="contact-links">
           <a href="https://chloelechat.com" target="_blank" rel="noopener">chloelechat.com</a>
           <a href="mailto:chloelechat@proton.me?subject=Demande%20de%20CV%20%2F%20CV%20request" data-fr="Demander mon CV" data-en="Request my CV" data-de="Lebenslauf anfragen">Demander mon CV</a>
+          <a id="legalLink" href="#" data-fr="Mentions légales &amp; confidentialité" data-en="Legal notice &amp; privacy" data-de="Impressum &amp; Datenschutz">Mentions légales &amp; confidentialité</a>
         </div>
         <div class="cmeta" data-fr="Basée à Berlin · Missions à distance & sur site" data-en="Based in Berlin · Remote & on-site" data-de="Ansässig in Berlin · Remote & vor Ort">Basée à Berlin · Missions à distance & sur site</div>
       </div>
@@ -350,6 +382,7 @@
 </div>
 
 <div class="modal" id="modal"><div class="modal-card" id="modalCard"></div></div>
+<div class="modal" id="legalModal"><div class="modal-card legal-card"><button class="modal-close" id="legalClose" aria-label="Fermer">×</button><div class="legal-body" id="legalBody"></div></div></div>
 
 <button class="nav-arrow prev hidden" id="prev" aria-label="Précédent"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
 <button class="nav-arrow next" id="next" aria-label="Suivant"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
@@ -602,6 +635,55 @@ function loop(now){
   requestAnimationFrame(loop);
 }
 requestAnimationFrame(loop);
+</script>
+<script>
+(function(){
+  var FR=`<h3>Mentions légales</h3>
+<p><strong>Éditrice du site :</strong> Chloé Lechat — [adresse postale à compléter], Berlin, Allemagne. Contact : chloelechat@proton.me</p>
+<p><strong>Statut :</strong> activité indépendante à temps partiel (Freiberuflerin / Selbständige), Berlin, Allemagne. [N° de TVA / USt-IdNr : à compléter si vous en avez un.]</p>
+<p><strong>Hébergeur :</strong> GitHub Pages — GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.</p>
+<p><strong>Contenus :</strong> textes et visuels © Chloé Lechat, sauf mention contraire. Photographies : Steve Barek, Frédéric Desmesure, Studio Delestrade, Pierre Planchenault.</p>
+<h3>Confidentialité</h3>
+<p>Ce site ne dépose aucun cookie et ne collecte aucune donnée personnelle à votre insu.</p>
+<p><strong>Contact :</strong> lorsque vous écrivez via le lien e-mail, votre message et votre adresse servent uniquement à vous répondre ; ils ne sont ni revendus ni transmis à des tiers.</p>
+<p><strong>Vos droits :</strong> vous pouvez demander l’accès, la rectification ou la suppression de vos données en écrivant à chloelechat@proton.me.</p>
+<p class="upd">Dernière mise à jour : septembre 2026</p>`;
+  var EN=`<h3>Legal notice</h3>
+<p><strong>Site owner:</strong> Chloé Lechat — [postal address to complete], Berlin, Germany. Contact: chloelechat@proton.me</p>
+<p><strong>Status:</strong> part-time independent freelancer (Freiberuflerin / Selbständige), Berlin, Germany. [VAT / USt-IdNr: to complete if you have one.]</p>
+<p><strong>Hosting:</strong> GitHub Pages — GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA.</p>
+<p><strong>Content:</strong> text and visuals © Chloé Lechat unless otherwise stated. Photography: Steve Barek, Frédéric Desmesure, Studio Delestrade, Pierre Planchenault.</p>
+<h3>Privacy</h3>
+<p>This site sets no cookies and collects no personal data without your knowledge.</p>
+<p><strong>Contact:</strong> when you write via the email link, your message and address are used only to reply to you; they are never sold or shared with third parties.</p>
+<p><strong>Your rights:</strong> you may request access, correction or deletion of your data by writing to chloelechat@proton.me.</p>
+<p class="upd">Last updated: September 2026</p>`;
+  var DE=`<h3>Impressum</h3>
+<p><strong>Verantwortlich:</strong> Chloé Lechat — [Postanschrift ergänzen], Berlin, Deutschland. Kontakt: chloelechat@proton.me</p>
+<p><strong>Status:</strong> selbstständige Tätigkeit in Teilzeit (Freiberuflerin / Selbständige), Berlin, Deutschland. [USt-IdNr: falls vorhanden, ergänzen.]</p>
+<p><strong>Hosting:</strong> GitHub Pages — GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA.</p>
+<p><strong>Inhalte:</strong> Texte und Bilder © Chloé Lechat, sofern nicht anders angegeben. Fotografie: Steve Barek, Frédéric Desmesure, Studio Delestrade, Pierre Planchenault.</p>
+<h3>Datenschutz</h3>
+<p>Diese Website setzt keine Cookies und erhebt keine personenbezogenen Daten ohne Ihr Wissen.</p>
+<p><strong>Kontakt:</strong> Wenn Sie über den E-Mail-Link schreiben, werden Ihre Nachricht und Adresse nur zur Beantwortung verwendet; sie werden nicht verkauft oder weitergegeben.</p>
+<p><strong>Ihre Rechte:</strong> Sie können Auskunft, Berichtigung oder Löschung Ihrer Daten unter chloelechat@proton.me verlangen.</p>
+<p class="upd">Zuletzt aktualisiert: September 2026</p>`;
+  var TX={fr:FR,en:EN,de:DE};
+  var lm=document.getElementById('legalModal');
+  var lb=document.getElementById('legalBody');
+  var link=document.getElementById('legalLink');
+  function curLang(){ return (window.LANG||document.documentElement.lang||'fr'); }
+  function fill(){ lb.innerHTML = TX[curLang()]||TX.fr; }
+  function open(e){ if(e)e.preventDefault(); fill(); lm.classList.add('open'); }
+  function close(){ lm.classList.remove('open'); }
+  if(link) link.addEventListener('click', open);
+  document.getElementById('legalClose').addEventListener('click', close);
+  lm.addEventListener('click', function(e){ if(e.target===lm) close(); });
+  window.addEventListener('keydown', function(e){ if(e.key==='Escape' && lm.classList.contains('open')) close(); });
+  // re-render on language switch while open
+  var langBar=document.getElementById('lang');
+  if(langBar) langBar.addEventListener('click', function(){ setTimeout(function(){ if(lm.classList.contains('open')) fill(); },0); });
+})();
 </script>
 </body>
 </html>
